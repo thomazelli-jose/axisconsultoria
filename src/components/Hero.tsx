@@ -1,17 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Settings, Users } from "lucide-react";
 import heroImage from "@/assets/hero-cnc.jpg";
-
 export const Hero = () => {
-  return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-steel overflow-hidden">
+  return <section className="relative min-h-screen flex items-center justify-center bg-gradient-steel overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src={heroImage} 
-          alt="Máquina CNC em operação" 
-          className="w-full h-full object-cover opacity-20"
-        />
+        <img src={heroImage} alt="Máquina CNC em operação" className="w-full h-full object-cover opacity-20" />
         <div className="absolute inset-0 bg-gradient-industrial opacity-80"></div>
       </div>
       
@@ -19,9 +13,7 @@ export const Hero = () => {
       <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
         {/* Logo/Brand */}
         <div className="mb-8">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-industrial-accent rounded-lg mb-4 shadow-industrial">
-            <span className="text-3xl font-bold text-industrial-dark">AC</span>
-          </div>
+          
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-2">
             AXIS CONSULTORIA CNC
           </h1>
@@ -72,7 +64,7 @@ export const Hero = () => {
             Solicitar Consultoria
             <ArrowRight className="w-5 h-5" />
           </Button>
-          <Button variant="outline" size="lg" className="text-lg px-8 border-white text-white hover:bg-white hover:text-industrial-dark">
+          <Button variant="outline" size="lg" className="text-lg px-8 border-white hover:bg-white text-slate-700">
             Agendar Treinamento
           </Button>
         </div>
@@ -84,6 +76,5 @@ export const Hero = () => {
           <ArrowRight className="w-6 h-6 text-white rotate-90" />
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
