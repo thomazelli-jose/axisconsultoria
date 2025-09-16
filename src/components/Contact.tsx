@@ -98,7 +98,7 @@ export const Contact = () => {
               <CardHeader>
                 <CardTitle className="flex items-center text-2xl text-industrial-dark">
                   <MessageSquare className="w-6 h-6 mr-3 text-industrial-blue" />
-                  Solicitar Consultoria
+                  Solicitar Treinamento
                 </CardTitle>
               </CardHeader>
               <CardContent>
