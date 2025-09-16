@@ -26,7 +26,7 @@ export const Hero = () => {
         <div className="mb-8">
           <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
             Consultoria em CNC e 
-            <span className="text-industrial-accent"> Liderança Industrial</span>
+            <span className="text-industrial-accent"> Treinamento Industrial</span>
           </h2>
           <p className="text-xl md:text-2xl text-industrial-light mb-8 max-w-4xl mx-auto">
             Otimização de Processos | Redução de Custos | Formação de Profissionais
@@ -60,21 +60,15 @@ export const Hero = () => {
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button 
-            variant="accent" 
-            size="lg" 
-            className="text-lg px-8"
-            onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })}
-          >
+          <Button variant="accent" size="lg" className="text-lg px-8" onClick={() => document.getElementById('contato')?.scrollIntoView({
+          behavior: 'smooth'
+        })}>
             Solicitar Consultoria
             <ArrowRight className="w-5 h-5" />
           </Button>
-          <Button 
-            variant="outline" 
-            size="lg" 
-            className="text-lg px-8 border-white hover:bg-white text-slate-700"
-            onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })}
-          >
+          <Button variant="outline" size="lg" className="text-lg px-8 border-white hover:bg-white text-slate-700" onClick={() => document.getElementById('contato')?.scrollIntoView({
+          behavior: 'smooth'
+        })}>
             Agendar Treinamento
           </Button>
         </div>
