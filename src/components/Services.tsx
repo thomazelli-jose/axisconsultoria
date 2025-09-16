@@ -45,7 +45,11 @@ export const Services = () => {
               </div>
             </div>
 
-            <Button variant="industrial" className="w-full">
+            <Button 
+              variant="industrial" 
+              className="w-full"
+              onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               Solicitar Consultoria CNC
             </Button>
           </div>
@@ -78,7 +82,11 @@ export const Services = () => {
               </div>
             </div>
 
-            <Button variant="industrial" className="w-full">
+            <Button 
+              variant="industrial" 
+              className="w-full"
+              onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               Solicitar Consultoria em Gestão
             </Button>
           </div>

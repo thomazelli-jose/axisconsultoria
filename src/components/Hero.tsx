@@ -60,11 +60,21 @@ export const Hero = () => {
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button variant="accent" size="lg" className="text-lg px-8">
+          <Button 
+            variant="accent" 
+            size="lg" 
+            className="text-lg px-8"
+            onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })}
+          >
             Solicitar Consultoria
             <ArrowRight className="w-5 h-5" />
           </Button>
-          <Button variant="outline" size="lg" className="text-lg px-8 border-white hover:bg-white text-slate-700">
+          <Button 
+            variant="outline" 
+            size="lg" 
+            className="text-lg px-8 border-white hover:bg-white text-slate-700"
+            onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })}
+          >
             Agendar Treinamento
           </Button>
         </div>
