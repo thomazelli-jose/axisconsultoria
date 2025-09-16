@@ -59,9 +59,7 @@ export const Experience = () => {
                       <div className={`w-10 h-10 rounded-lg flex items-center justify-center mr-3 ${exp.current ? 'bg-industrial-accent' : 'bg-industrial-blue'}`}>
                         <exp.icon className={`w-5 h-5 ${exp.current ? 'text-industrial-dark' : 'text-white'}`} />
                       </div>
-                      {exp.current && <span className="bg-industrial-accent text-industrial-dark text-xs font-semibold px-2 py-1 rounded-full">
-                          ATUAL
-                        </span>}
+                      {exp.current}
                     </div>
                     
                     <h3 className="text-xl font-bold text-industrial-dark mb-1">
