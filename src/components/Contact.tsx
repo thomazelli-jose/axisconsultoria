@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { MapPin, Mail, Phone, Calendar, MessageSquare, Building } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 export const Contact = () => {
   const {
     toast
@@ -48,37 +49,75 @@ export const Contact = () => {
       });
     }
   };
-  const handleConsultancySubmit = (e: React.FormEvent) => {
+  const handleConsultancySubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Aqui você integraria com um serviço de email ou backend
-    toast({
-      title: "Solicitação enviada!",
-      description: "Entraremos em contato em até 24 horas."
-    });
-    setConsultancyForm({
-      name: "",
-      company: "",
-      email: "",
-      phone: "",
-      message: ""
-    });
+    
+    try {
+      const { error } = await supabase.functions.invoke('send-contact-email', {
+        body: {
+          type: 'consultancy',
+          formData: consultancyForm
+        }
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: "Solicitação enviada!",
+        description: "Entraremos em contato em até 24 horas."
+      });
+      
+      setConsultancyForm({
+        name: "",
+        company: "",
+        email: "",
+        phone: "",
+        message: ""
+      });
+    } catch (error) {
+      console.error('Erro ao enviar email:', error);
+      toast({
+        title: "Erro ao enviar",
+        description: "Tente novamente em alguns minutos.",
+        variant: "destructive"
+      });
+    }
   };
-  const handleTrainingSubmit = (e: React.FormEvent) => {
+  const handleTrainingSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Aqui você integraria com um sistema de agendamento
-    toast({
-      title: "Treinamento agendado!",
-      description: "Você receberá a confirmação por email em breve."
-    });
-    setTrainingForm({
-      name: "",
-      company: "",
-      email: "",
-      phone: "",
-      trainingType: "",
-      date: "",
-      participants: ""
-    });
+    
+    try {
+      const { error } = await supabase.functions.invoke('send-contact-email', {
+        body: {
+          type: 'training',
+          formData: trainingForm
+        }
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: "Treinamento agendado!",
+        description: "Você receberá a confirmação por email em breve."
+      });
+      
+      setTrainingForm({
+        name: "",
+        company: "",
+        email: "",
+        phone: "",
+        trainingType: "",
+        date: "",
+        participants: ""
+      });
+    } catch (error) {
+      console.error('Erro ao enviar email:', error);
+      toast({
+        title: "Erro ao enviar",
+        description: "Tente novamente em alguns minutos.",
+        variant: "destructive"
+      });
+    }
   };
   return <section className="py-20 bg-white" id="contato">
       <div className="max-w-7xl mx-auto px-6">
