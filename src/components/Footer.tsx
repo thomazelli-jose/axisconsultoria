@@ -1,16 +1,12 @@
 import { MapPin, Mail, Phone, Linkedin } from "lucide-react";
-
 export const Footer = () => {
-  return (
-    <footer className="bg-industrial-dark text-white py-12">
+  return <footer className="bg-industrial-dark text-white py-12">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}
           <div>
             <div className="flex items-center mb-4">
-              <div className="w-12 h-12 bg-industrial-accent rounded-lg flex items-center justify-center mr-3">
-                <span className="text-xl font-bold text-industrial-dark">AC</span>
-              </div>
+              
               <div>
                 <h3 className="text-xl font-bold">AXIS CONSULTORIA CNC</h3>
                 <p className="text-sm text-gray-300 italic">"Movendo sua empresa no eixo da evolução"</p>
@@ -32,7 +28,7 @@ export const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 text-industrial-accent" />
-                <span className="text-gray-300 text-sm">contato@axiscnc.com</span>
+                <span className="text-gray-300 text-sm">jose.thomazelli@gmail.com</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-4 h-4 text-industrial-accent" />
@@ -69,6 +65,5 @@ export const Footer = () => {
           </p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
