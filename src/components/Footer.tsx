@@ -32,7 +32,7 @@ export const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-4 h-4 text-industrial-accent" />
-                <span className="text-gray-300 text-sm">(17) 99999-9999</span>
+                <span className="text-gray-300 text-sm">(17) 98833-2566</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Linkedin className="w-4 h-4 text-industrial-accent" />
