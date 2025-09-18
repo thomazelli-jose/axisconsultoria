@@ -1,76 +1,82 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Settings, Users } from "lucide-react";
+import { ArrowRight, Phone, MapPin } from "lucide-react";
 import heroImage from "@/assets/hero-cnc.jpg";
+
 export const Hero = () => {
-  return <section className="relative min-h-screen flex items-center justify-center bg-gradient-steel overflow-hidden">
+  return (
+    <section className="relative min-h-screen flex items-center justify-center bg-gradient-industrial overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <img src={heroImage} alt="Máquina CNC em operação" className="w-full h-full object-cover opacity-20" />
-        <div className="absolute inset-0 bg-gradient-industrial opacity-80"></div>
+        <img 
+          src={heroImage} 
+          alt="Máquinas CNC industriais e manutenção mecânica" 
+          className="w-full h-full object-cover opacity-15" 
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-industrial-dark/90 via-industrial-dark/80 to-industrial-blue/60"></div>
       </div>
       
       {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
-        {/* Logo/Brand */}
+      <div className="relative z-10 text-center px-6 max-w-7xl mx-auto">
+        {/* Brand */}
         <div className="mb-8">
-          
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-2">
-            AXIS CONSULTORIA CNC
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 tracking-tight">
+            AXIS CONSULTORIA
           </h1>
-          <p className="text-xl md:text-2xl text-industrial-light font-light italic">
-            "Movendo sua empresa no eixo da evolução"
-          </p>
+          <div className="text-2xl md:text-3xl text-industrial-accent font-semibold mb-2">
+            CNC & MANUTENÇÃO MECÂNICA
+          </div>
+          <div className="flex items-center justify-center gap-2 text-lg text-industrial-light">
+            <MapPin className="w-5 h-5" />
+            <span>Bebedouro-SP e Região</span>
+          </div>
         </div>
 
-        {/* Main Title */}
-        <div className="mb-8">
-          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-            Consultoria em CNC e 
-            <span className="text-industrial-accent"> Treinamento Industrial</span>
+        {/* Main Value Proposition */}
+        <div className="mb-12">
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight max-w-5xl mx-auto">
+            Reduzimos paradas, aumentamos produtividade e damos 
+            <span className="text-industrial-accent"> suporte completo em máquinas CNC</span>
           </h2>
-          <p className="text-xl md:text-2xl text-industrial-light mb-8 max-w-4xl mx-auto">
-            Otimização de Processos | Redução de Custos | Formação de Profissionais
+          <p className="text-xl md:text-2xl text-industrial-light mb-8 max-w-4xl mx-auto font-light">
+            Consultoria industrial, liderança e manutenção mecânica de equipamentos
           </p>
         </div>
 
-        {/* Key Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 max-w-4xl mx-auto">
-          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-            <div className="flex items-center justify-center mb-3">
-              <Settings className="w-8 h-8 text-industrial-accent" />
-            </div>
-            <h3 className="text-2xl font-bold text-white mb-2">20%</h3>
-            <p className="text-industrial-light">Redução de Custos</p>
-          </div>
-          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-            <div className="flex items-center justify-center mb-3">
-              <Users className="w-8 h-8 text-industrial-accent" />
-            </div>
-            <h3 className="text-2xl font-bold text-white mb-2">15%</h3>
-            <p className="text-industrial-light">Redução Tempo Ciclo</p>
-          </div>
-          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-            <div className="flex items-center justify-center mb-3">
-              <ArrowRight className="w-8 h-8 text-industrial-accent" />
-            </div>
-            <h3 className="text-2xl font-bold text-white mb-2">100+</h3>
-            <p className="text-industrial-light">Profissionais Formados</p>
-          </div>
+        {/* Primary CTAs */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+          <Button 
+            size="lg" 
+            className="text-lg px-8 py-4 bg-industrial-accent hover:bg-industrial-accent/90 text-industrial-dark font-semibold shadow-industrial" 
+            onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })}
+          >
+            <Phone className="w-5 h-5 mr-2" />
+            Solicitar Orçamento
+          </Button>
+          <Button 
+            variant="outline" 
+            size="lg" 
+            className="text-lg px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-industrial-dark font-semibold" 
+            onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })}
+          >
+            Agendar Vistoria
+            <ArrowRight className="w-5 h-5 ml-2" />
+          </Button>
         </div>
 
-        {/* CTAs */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button variant="accent" size="lg" className="text-lg px-8" onClick={() => document.getElementById('contato')?.scrollIntoView({
-          behavior: 'smooth'
-        })}>
-            Solicitar Consultoria
-            <ArrowRight className="w-5 h-5" />
-          </Button>
-          <Button variant="outline" size="lg" className="text-lg px-8 border-white hover:bg-white text-slate-700" onClick={() => document.getElementById('contato')?.scrollIntoView({
-          behavior: 'smooth'
-        })}>
-            Agendar Treinamento
-          </Button>
+        {/* Services Preview */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300">
+            <h3 className="text-xl font-bold text-white mb-2">Manutenção Preventiva</h3>
+            <p className="text-industrial-light text-sm">Evite paradas não programadas</p>
+          </div>
+          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300">
+            <h3 className="text-xl font-bold text-white mb-2">Manutenção Corretiva</h3>
+            <p className="text-industrial-light text-sm">Reparo rápido e eficiente</p>
+          </div>
+          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300">
+            <h3 className="text-xl font-bold text-white mb-2">Consultoria Industrial</h3>
+            <p className="text-industrial-light text-sm">Otimização de processos</p>
+          </div>
         </div>
       </div>
 
@@ -80,5 +86,6 @@ export const Hero = () => {
           <ArrowRight className="w-6 h-6 text-white rotate-90" />
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
